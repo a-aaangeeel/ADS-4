@@ -5,8 +5,8 @@ int countPairs1(int *arr, int size, int value) {
   for (int i = 0; i < size - 1; i++)
     for (int j = i + 1; j < size; j++)
       if ((arr[i] + arr[j]) == value)
-		  iResult += 1;
-  return iResult;
+             iResult += 1;
+	return iResult;
 }
 
 int countPairs2(int* arr, int len, int value) {
@@ -20,7 +20,7 @@ for (int i = 0; i < right; i++) {
         for (int j = right; j > i; j--) {
             int sum = arr[i] + arr[j];
             if (sum == value) {
-				iResult++;
+              iResult++;
             }
         }
     }
@@ -35,15 +35,15 @@ int mysearch(int* arr, int size, int value) {
     while (left <= right) {
         int mid = left + (right - left) / 2;
         if (arr[mid] == value) {
-			iResult++;
+             iResult++;
             int left = mid - 1;
             int right = mid + 1;
             while (left >= 0 && arr[left] == value) {
-				iResult++;
+             iResult++;
                 left--;
             }
             while (right < size && arr[right] == value) {
-				iResult++;
+                iResult++;
                 right++;
             }
             return iResult;

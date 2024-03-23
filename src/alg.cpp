@@ -27,7 +27,7 @@ for (int i = 0; i < right; i++) {
     return iResult;
 }
 
-int cbinsearch(int* arr, int size, int value) {
+int mysearch(int* arr, int size, int value) {
     int right = size - 1;
     int iResult = 0;
     int left = 0;
@@ -55,4 +55,13 @@ int cbinsearch(int* arr, int size, int value) {
         }
     }
     return iResult;
+}
+
+int countPairs3(int* arr, int len, int value) {
+    int count = 0;
+    for (int i = 0; i < len; i++) {
+        int second = value - arr[i];
+        count += mysearch(&arr[i + 1], len - i - 1, second);
+    }
+    return count;
 }
